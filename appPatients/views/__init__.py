@@ -1,0 +1,1 @@
+from .patientsView import (patientsList,patientsDetail)
