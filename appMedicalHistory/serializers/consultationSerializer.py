@@ -5,7 +5,7 @@ from appMedicalHistory.models.consultations import Consultation
 class ConsultationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Consultation
-        fields = ['__all__']
+        fields = ['__ALL__',]
 
     
     

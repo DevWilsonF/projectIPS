@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.backends import TokenBackend
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework.permissions import IsAuthenticated
-from appEmployees.models.users import User
+from appEmployees.models.employee import User
 from appEmployees.serializers.userSerializer import EmployeeSerializer
 
 
