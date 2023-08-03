@@ -1,3 +1,4 @@
+from datetime import datetime
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.db import models
@@ -13,7 +14,6 @@ def consultationList(request, pk=None):
             consultation= Consultation.objects.filter(models.Q(consultationID__icontains=pk)|
                                                         models.Q(patientID__icontains=pk)|
                                                         models.Q(employeeID__icontains=pk)|
-                                                        models.Q(state__icontains=pk)|
                                                         models.Q(historyID__icontains=pk))
         else:
             consultation= Consultation.objects.all()
@@ -25,8 +25,14 @@ def consultationList(request, pk=None):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors)
-    
-    
+@api_view(['GET'])    
+def consultationStateDetail(request, pk=None): 
+    consultation= Consultation.objects.filter(state = pk)
+    if request.method =='GET':
+        serializer = ConsultationSerializer(consultation,many=True)
+        return Response(serializer.data)   
+
+
 @api_view(['GET','PUT'])
 def consultationDetail(request, pk=None): 
     consultation= Consultation.objects.filter(consultationID = pk).first()
