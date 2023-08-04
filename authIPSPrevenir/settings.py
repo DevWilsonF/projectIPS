@@ -105,12 +105,13 @@ WSGI_APPLICATION = 'authIPSPrevenir.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'ipsprevenir',
-        'USER': 'root',
-        'PASSWORD': 'FFFips',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'IPSPrevenir',
+        'USER': 'fl0user',
+        'PASSWORD': '5pkILeD8qVPl',
+        'HOST': 'ep-autumn-boat-34205438.us-east-2.aws.neon.tech',
+        'PORT': '5432',
+        'sslmode':'require'
     }
 }
 
