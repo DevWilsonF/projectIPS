@@ -111,7 +111,9 @@ DATABASES = {
         'PASSWORD': '5pkILeD8qVPl',
         'HOST': 'ep-autumn-boat-34205438.us-east-2.aws.neon.tech',
         'PORT': '5432',
-        'sslmode':'require'
+        'OPTIONS': {
+            'sslmode':'require'
+        }
     }
 }
 
