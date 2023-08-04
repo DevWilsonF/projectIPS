@@ -1,5 +1,5 @@
-Django
-djangorestframework
-djangorestframework-simplejwt
-psycopg2
-gunicorn
+Django>=3.2,<4.0
+djangorestframework>=3.12,<4.0
+djangorestframework-simplejwt>=4.7,<5.0
+psycopg2>=2.9,<3.0
+gunicorn>=20.1,<21.0
