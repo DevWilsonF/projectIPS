@@ -109,7 +109,7 @@ DATABASES = {
         'NAME': 'IPSPrevenir',
         'USER': 'fl0user',
         'PASSWORD': '5pkILeD8qVPl',
-        'HOST': 'ep-autumn-boat-34205438.us-east-2.aws.neon.tech',
+        'HOST': 'ep-autumn-boat-34205438.us-east-2.aws.neon.tech?options=endpoint%3Dep-autumn-boat-34205438&sslmode=require',
         'PORT': '5432',
         'sslmode':'require'
     }
