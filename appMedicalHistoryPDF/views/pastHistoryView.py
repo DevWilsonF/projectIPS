@@ -7,7 +7,7 @@ from appMedicalHistoryPDF.serializers.pastHistorySerializer import PastHistorySe
 
 
 @api_view(['GET','POST'])
-def appointmentList(request, pk=None):
+def pastHistoryList(request, pk=None):
     if request.method ==  'GET':
         if pk is not None:
             pastHistory= PastHistory.objects.filter(models.Q(medicalHistoryID__icontains=pk)|
@@ -18,21 +18,21 @@ def appointmentList(request, pk=None):
         serializer = PastHistorySerializer(pastHistory,many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
-        appointmentSerializer =PastHistorySerializer(data=request.data)
-        if appointmentSerializer.is_valid():
-            appointmentSerializer.save()
-            return Response(appointmentSerializer.data)
-        return Response(appointmentSerializer.errors)
+        pastHistorySerializer =PastHistorySerializer(data=request.data)
+        if pastHistorySerializer.is_valid():
+            pastHistorySerializer.save()
+            return Response(pastHistorySerializer.data)
+        return Response(pastHistorySerializer.errors)
     
     
 @api_view(['GET','PUT'])
-def appointmentDetail(request, pk=None): 
-    pastHistory= PastHistory.objects.filter(appointmentID = pk).first()
+def pastHistoryDetail(request, pk=None): 
+    pastHistory= PastHistory.objects.filter(pastHistoryID = pk).first()
     if request.method =='GET':
-        appointmenterializer = PastHistorySerializer(pastHistory)
-        return Response(appointmenterializer.data)
+        pastHistoryerializer = PastHistorySerializer(pastHistory)
+        return Response(pastHistoryerializer.data)
     elif request.method  == 'PUT':
-        appointmenterializer= PastHistorySerializer(pastHistory,data=request.data)
+        pastHistoryerializer= PastHistorySerializer(pastHistory,data=request.data)
         if PastHistorySerializer.is_valid():
             PastHistorySerializer.save()
             return Response(PastHistorySerializer.data,status=201)

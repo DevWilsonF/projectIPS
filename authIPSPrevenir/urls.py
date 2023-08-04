@@ -17,6 +17,9 @@ Including another URLconf
 from django.urls import path
 from appEmployees.views.employeeView import (UserGetView,UserPostView)
 from appPatients.views.patientsView import (patientsList,patientsDetail)
+from appMedicalAppointment.views.appointmentView import(appointmentDetail,appointmentList)
+from appMedicalHistory.views import *
+from appMedicalHistoryPDF.views.pastHistoryView import (pastHistoryDetail,pastHistoryList)
 from rest_framework_simplejwt.views import (TokenObtainPairView,TokenRefreshView)
 urlpatterns = [
     path('login/', TokenObtainPairView.as_view()),
@@ -26,7 +29,26 @@ urlpatterns = [
     path('patients/',patientsList),
     path('patients/<str:pk>',patientsList),
     path('patientsDetail/<int:pk>',patientsDetail),
-    
-    
-    
+    path('appointmentDetail/<int:pk>',appointmentDetail),
+    path('appointmentList/<int:pk>',appointmentList),
+    path('appointmentList/',appointmentList),
+    path('pastHistoryDetail/<int:pk>',pastHistoryDetail),
+    path('pastHistoryList/<int:pk>',pastHistoryList),
+    path('pastHistoryList/',pastHistoryList),
+    path('consultationDetail/<int:pk>',consultationDetail),
+    path('consultationList/<int:pk>',consultationList),
+    path('consultationList/',consultationList),
+    path('consultationStateDetail/<int:pk>',consultationStateDetail),
+    path('medicalExamsDetail/<int:pk>',medicalExamsDetail),
+    path('medicalExamsList/',medicalExamsList),
+    path('medicalExamsList/<int:pk>',medicalExamsList),
+    path('medicalHistoryDetail/<int:pk>',medicalHistoryDetail),
+    path('medicalHistoryList/',medicalHistoryList),
+    path('medicalHistoryList/<int:pk>',medicalHistoryList),
+    path('medicalNotesDetail/<int:pk>',medicalNotesDetail),
+    path('medicalNotesList/<int:pk>',medicalNotesList),
+    path('medicalNotesList/',medicalNotesList),
+    path('vitalSignsDetail/<int:pk>',vitalSingsDetail),
+    path('vitalSingsList/<int:pk>',vitalSingsList),
+    path('vitalSingsList/',vitalSingsList),
 ]

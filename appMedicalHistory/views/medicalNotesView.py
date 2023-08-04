@@ -6,11 +6,11 @@ from appMedicalHistory.serializers.medicalNotesSerializer import MedicalNotesSer
 
 
 @api_view(['GET','POST'])
-def medicalExamsList(request, pk=None):
+def medicalNotesList(request, pk=None):
     if request.method ==  'GET':
         if pk is not None:
-            medicalNotes= MedicalNotes.objects.filter(models.Q(patientID__icontains=pk)|
-                                                        models.Q(medicalExamsID__icontains=pk))
+            medicalNotes= MedicalNotes.objects.filter(models.Q(consultationID__icontains=pk)|
+                                                        models.Q(medicalNotesID__icontains=pk))
         else:
             medicalNotes= MedicalNotes.objects.all()
         serializer = MedicalNotesSerializer(medicalNotes,many=True)
@@ -23,8 +23,8 @@ def medicalExamsList(request, pk=None):
         return Response(serializer.errors)
     
 @api_view(['GET','PUT'])
-def medicalExamsDetail(request, pk=None): 
-    medicalNotes= MedicalNotes.objects.filter(consultationID = pk).first()
+def medicalNotesDetail(request, pk=None): 
+    medicalNotes= MedicalNotes.objects.filter(medicalNotesID = pk).first()
     if request.method =='GET':
         serializer = MedicalNotesSerializer(medicalNotes)
         return Response(serializer.data)
