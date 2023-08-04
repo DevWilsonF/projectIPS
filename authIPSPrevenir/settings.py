@@ -108,8 +108,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'IPSPrevenir',
         'USER': 'fl0user',
-        'PASSWORD': '5pkILeD8qVPl',
-        'HOST': 'ep-autumn-boat-34205438.us-east-2.aws.neon.tech?options=endpoint%3Dep-autumn-boat-34205438&sslmode=require',
+        'PASSWORD': 'endpoint=ep-autumn-boat-34205438;5pkILeD8qVPl',
+        'HOST': 'ep-autumn-boat-34205438.us-east-2.aws.neon.tech',
         'PORT': '5432',
         'sslmode':'require'
     }
