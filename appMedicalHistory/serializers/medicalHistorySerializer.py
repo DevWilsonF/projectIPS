@@ -5,4 +5,10 @@ from appMedicalHistory.models.medicalHistory import MedicalHistory
 class MedicalHistorySerializer(serializers.ModelSerializer):
     class Meta:
         model = MedicalHistory
-        fields = ['__all__']
+        fields = [
+            'historyID',
+            'patientID',
+            'allergies',
+            'previousDiseases',
+            'surgeries'
+        ]

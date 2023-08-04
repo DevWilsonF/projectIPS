@@ -5,7 +5,15 @@ from appMedicalHistory.models.consultations import Consultation
 class ConsultationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Consultation
-        fields = ['__ALL__',]
+        fields = [
+            'consultationID',
+            'patientID',
+            'consultationDate',
+            'state',
+            'diagnosis',
+            'treatment',
+            'employeeID'
+            ]
 
     
     

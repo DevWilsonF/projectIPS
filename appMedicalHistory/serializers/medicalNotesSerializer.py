@@ -5,4 +5,9 @@ from appMedicalHistory.models.medicalNotes import MedicalNotes
 class MedicalNotesSerializer(serializers.ModelSerializer):
     class Meta:
         model= MedicalNotes
-        fields = ['__all__']
+        fields = [
+            'medicalNotesID',
+            'consultationID',
+            'noteDate',
+            'Description'
+        ]

@@ -5,4 +5,13 @@ from appMedicalHistory.models.vitalSigns import VitalSings
 class VitalSingsSerializer(serializers.ModelSerializer):
     class Meta:
         model = VitalSings
-        fields = ['__all__']
+        fields = [
+            'vitalSingsID',
+            'consultationID',
+            'recordignDate',
+            'bloodPressure',
+            'heartRate',
+            'temperature',
+            'weight',
+            'height'
+        ]

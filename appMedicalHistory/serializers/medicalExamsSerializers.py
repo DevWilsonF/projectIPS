@@ -5,4 +5,11 @@ from appMedicalHistory.models.medicalExams import MedicalExams
 class MedicalExamsSerializer(serializers.ModelSerializer):
     class Meta:
         model = MedicalExams
-        fields = ['__all__']
+        fields = [
+            'medicalExamsID',
+            'consultationID',
+            'PatientID',
+            'medicalExamsDate',
+            'examType',
+            'Results'
+        ]
