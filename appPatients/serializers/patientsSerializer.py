@@ -12,8 +12,6 @@ class PatientSerializer(serializers.ModelSerializer):
                 'gender',
                 'maritalStatus',
                 'nationality',
-                'city',
-                'address',
                 'documentType',
                 'documentNumber',
                 'birthDate',

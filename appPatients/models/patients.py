@@ -10,8 +10,6 @@ class Patients(models.Model):
     gender = models.CharField('Gender', max_length=30, null=False)
     maritalStatus = models.CharField('MaritalStatus',max_length= 15, null= False)
     nationality = models.CharField('Nationality', max_length= 15, null=False)
-    city = models.CharField('City', max_length=30, null=False)
-    address = models.CharField('Address', max_length=120, null=False)
     documentType = models.CharField('DocumentType', max_length=30, null=False)
     documentNumber = models.CharField('DocumentNumber', max_length=30, null=False)
     birthDate = models.DateField('BirthDate', null=False)
