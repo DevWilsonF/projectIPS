@@ -5,7 +5,7 @@ class Patients(models.Model):
     PatientID = models.AutoField(primary_key=True)
     firstName = models.CharField('Name', max_length=30, null=False)
     lastName = models.CharField('Lastname', max_length=30, null=False)
-    registrationDate = models.DateTimeField('RegistrationDate', auto_now_add= True, null= False)
+    registrationDate = models.DateField('RegistrationDate', auto_now_add= True, null= False)
     phone = models.CharField('Phone', max_length=30, null=False)
     gender = models.CharField('Gender', max_length=30, null=False)
     maritalStatus = models.CharField('MaritalStatus',max_length= 15, null= False)
