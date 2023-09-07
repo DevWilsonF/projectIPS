@@ -9,8 +9,8 @@ from appMedicalHistory.serializers.medicalHistorySerializer import MedicalHistor
 def medicalHistoryList(request, pk=None):
     if request.method ==  'GET':
         if pk is not None:
-            medicalHistory= MedicalHistory.objects.filter(models.Q(patientID__icontains=pk)|
-                                                        models.Q(historyID__icontains=pk))
+            medicalHistory= MedicalHistory.objects.filter(models.Q(patient=pk)|
+                                                        models.Q(historyID=pk))
         else:
             medicalHistory= MedicalHistory.objects.all()
         serializer = MedicalHistorySerializer(medicalHistory,many=True)
@@ -24,7 +24,7 @@ def medicalHistoryList(request, pk=None):
     
 @api_view(['GET','PUT'])
 def medicalHistoryDetail(request, pk=None): 
-    medicalHistory= MedicalHistory.objects.filter(consultationID = pk).first()
+    medicalHistory= MedicalHistory.objects.filter(historyID = pk).first()
     if request.method =='GET':
         serializer = MedicalHistorySerializer(medicalHistory)
         return Response(serializer.data)

@@ -6,8 +6,6 @@ class MedicalHistorySerializer(serializers.ModelSerializer):
     class Meta:
         model = MedicalHistory
         fields = [
-            'historyID',
-            'patientID',
             'allergies',
             'previousDiseases',
             'surgeries'
