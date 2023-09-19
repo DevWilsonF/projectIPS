@@ -42,8 +42,6 @@ urlpatterns = [
     path('medicalExamsDetail/<int:pk>',medicalExamsDetail),
     path('medicalExamsList/',medicalExamsList),
     path('medicalExamsList/<int:pk>',medicalExamsList),
-    path('medicalHistoryDetail/<int:pk>',medicalHistoryDetail),
-    path('medicalHistoryList/',medicalHistoryList),
     path('medicalHistoryList/<int:pk>',medicalHistoryList),
     path('medicalNotesDetail/<int:pk>',medicalNotesDetail),
     path('medicalNotesList/<int:pk>',medicalNotesList),

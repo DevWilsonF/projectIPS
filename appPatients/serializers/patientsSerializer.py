@@ -48,8 +48,8 @@ class PatientSerializer(serializers.ModelSerializer):
                 "insuranceType": patient.insuranceType,
                 "occupation": patient.occupation,
                 "medicalHistory": {
-                    "allergies": "Pollen, Peanuts",
-                    "previousDiseases": "Hypertension",
-                    "surgeries": "Appendectomy"
+                    "allergies": medicalHistory.allergies,
+                    "previousDiseases": medicalHistory.previousDiseases,
+                    "surgeries": medicalHistory.surgeries
                 }
         }

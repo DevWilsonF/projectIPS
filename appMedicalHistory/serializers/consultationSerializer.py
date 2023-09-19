@@ -12,7 +12,8 @@ class ConsultationSerializer(serializers.ModelSerializer):
             'state',
             'diagnosis',
             'treatment',
-            'employeeID'
+            'employeeID',
+            "historyID"
             ]
 
     

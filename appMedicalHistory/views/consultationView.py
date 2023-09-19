@@ -11,10 +11,7 @@ from appMedicalHistory.serializers.consultationSerializer import ConsultationSer
 def consultationList(request, pk=None):
     if request.method ==  'GET':
         if pk is not None:
-            consultation= Consultation.objects.filter(models.Q(consultationID__icontains=pk)|
-                                                        models.Q(patientID__icontains=pk)|
-                                                        models.Q(employeeID__icontains=pk)|
-                                                        models.Q(historyID__icontains=pk))
+            consultation= Consultation.objects.filter(models.Q(patientID=pk))
         else:
             consultation= Consultation.objects.all()
         serializer = ConsultationSerializer(consultation,many=True)
