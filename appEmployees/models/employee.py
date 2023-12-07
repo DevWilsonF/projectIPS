@@ -24,7 +24,7 @@ class AdminUser (BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
     id = models.BigAutoField(primary_key=True)
     username = models.CharField('Username',max_length=25, unique=True)
-    password = models.CharField('Password', max_length=15)
+    password = models.CharField('Password', max_length=500)
     role = models.CharField('Role', max_length=30,null=False)
     state =models.BooleanField('Estado',default=True)
 

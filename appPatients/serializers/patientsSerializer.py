@@ -4,7 +4,7 @@ from appMedicalHistory.serializers.medicalHistorySerializer import MedicalHistor
 from rest_framework import serializers
 
 class PatientSerializer(serializers.ModelSerializer):
-    medicalHistory = MedicalHistorySerializer()
+    medicalHistory = MedicalHistorySerializer(required=False, allow_null=True)
     class Meta:
         model= Patients
         fields = ['PatientID',
@@ -24,10 +24,14 @@ class PatientSerializer(serializers.ModelSerializer):
                 'medicalHistory']
         
     def create(self, validated_data):
-        medicalHistoryData = validated_data.pop('medicalHistory')
-        patientInstance = Patients.objects.create(**validated_data)
-        MedicalHistory.objects.create(patient=patientInstance, **medicalHistoryData)
-        return patientInstance
+        medical_history_data = validated_data.pop('medicalHistory', {})
+        patient_instance = Patients.objects.create(**validated_data)
+
+        # Crear la historia clínica automáticamente si se proporcionan datos
+        if medical_history_data is not None:
+            MedicalHistory.objects.create(patient=patient_instance, **medical_history_data)
+
+        return patient_instance
     def to_representation(self, obj):
         patient =Patients.objects.get(PatientID = obj.PatientID)
         medicalHistory = MedicalHistory.objects.get(patient=obj.PatientID)
