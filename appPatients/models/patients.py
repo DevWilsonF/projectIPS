@@ -17,5 +17,3 @@ class Patients(models.Model):
     insuranceType = models.CharField('InsuranceType', max_length=15, null= False)
     occupation = models.CharField('Occupation', max_length=30, null= False)
 
-    def __str__(self):
-        return f"{self.PatientID}: {self.firstName} {self.lastName}"

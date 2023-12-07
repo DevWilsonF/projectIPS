@@ -1,5 +1,5 @@
 from .consultationView import (consultationDetail,consultationList,consultationStateDetail)
 from .medicalExamsView import (medicalExamsDetail,medicalExamsList)
-from .medicalHistoryView import (medicalHistoryList)
+from .medicalHistoryView import (medicalHistoryDetail)
 from .medicalNotesView import (medicalNotesDetail,medicalNotesList)
 from .vitalSignsView import (vitalSingsDetail,vitalSingsList)

@@ -6,7 +6,7 @@ from appMedicalHistory.serializers.medicalHistorySerializer import MedicalHistor
 
 
 @api_view(['GET','PUT','PATCH'])
-def medicalHistoryList(request, pk=None):
+def medicalHistoryDetail(request, pk=None):
     medicalHistory= MedicalHistory.objects.filter(models.Q(patient=pk)|
                                                         models.Q(historyID=pk)).first()
     if request.method =='GET':

@@ -42,7 +42,7 @@ urlpatterns = [
     path('medicalExamsDetail/<int:pk>',medicalExamsDetail),
     path('medicalExamsList/',medicalExamsList),
     path('medicalExamsList/<int:pk>',medicalExamsList),
-    path('medicalHistoryList/<int:pk>',medicalHistoryList),
+    path('medicalHistoryDetail/<int:pk>',medicalHistoryDetail),
     path('medicalNotesDetail/<int:pk>',medicalNotesDetail),
     path('medicalNotesList/<int:pk>',medicalNotesList),
     path('medicalNotesList/',medicalNotesList),

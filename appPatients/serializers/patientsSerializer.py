@@ -31,7 +31,6 @@ class PatientSerializer(serializers.ModelSerializer):
     def to_representation(self, obj):
         patient =Patients.objects.get(PatientID = obj.PatientID)
         medicalHistory = MedicalHistory.objects.get(patient=obj.PatientID)
-        
         return {
                 "PatientID": patient.PatientID,
                 "firstName": patient.firstName,
